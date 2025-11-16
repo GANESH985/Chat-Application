@@ -28,7 +28,7 @@ function ChatWindow() {
 
   const fetchSessionHistory = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/session/${sessionId}`);
+      const response = await fetch(`https://chat-application-t4cg.onrender.com/api/session/${sessionId}`);
       const data = await response.json();
       setMessages(data.history);
     } catch (error) {
@@ -52,7 +52,7 @@ function ChatWindow() {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/chat/${sessionId}`, {
+      const response = await fetch(`https://chat-application-t4cg.onrender.com/api/chat/${sessionId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
