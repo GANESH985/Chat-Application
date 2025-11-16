@@ -13,7 +13,7 @@ function Sidebar({ isOpen, onToggle }) {
 
   const fetchSessions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/sessions');
+      const response = await fetch('https://chat-application-t4cg.onrender.com/api/sessions');
       const data = await response.json();
       setSessions(data.sessions);
     } catch (error) {
@@ -23,7 +23,7 @@ function Sidebar({ isOpen, onToggle }) {
 
   const handleNewChat = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/new-chat');
+      const response = await fetch('https://chat-application-t4cg.onrender.com/api/new-chat');
       const data = await response.json();
       navigate(`/chat/${data.sessionId}`);
       fetchSessions();
